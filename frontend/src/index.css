@@ -1,16 +1,18 @@
+/* App.css */
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 	font-family: Outfit;
 	scroll-behavior: smooth;
-	background-color: #030b1a;
 	color: #e4e4e4;
 }
 
 body {
 	min-height: 100vh;
+	background-color: #0D1117;
 }
 
 a {
@@ -18,10 +20,11 @@ a {
 	color: inherit;
 }
 
-/* .app-navbar {
+.app {
 	width: 80%;
 	margin: auto;
-} */
+}
+
 
 @keyframes fadeIn {
 	0% {
@@ -33,8 +36,22 @@ a {
 }
 
 hr {
-	border: 0; /* Remove default border */
-	height: 1px; /* Default height */
-	background-color: #444; /* Default color */
-	margin: 5px 0; /* Margin for spacing */
+	border: 0;
+	height: 1px;
+	background-color: #444;
+	margin: 5px 0;
 }
+
+.app-navbar {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+.app-content {
+	display: flex;
+}
+
+/* .app{
+
+} */

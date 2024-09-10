@@ -1,11 +1,15 @@
 /* Navbar.css */
-
 .navbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 20px;
 	color: white;
+	position: sticky;
+	top: 0;
+	z-index: 1000; /* Ensure it's on top */
+	background-color: #25292e;
+	font-size: 14px;
 }
 
 .navbar-left,
@@ -20,7 +24,6 @@
 }
 
 .menu-icon {
-	/* width: 30px; */
 	height: 27px;
 	padding: 2.5px;
 	cursor: pointer;
@@ -34,148 +37,73 @@
 	color: #ccc;
 }
 
-.navbar-center {
+/* .navbar-center {
 	flex: 2;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
+} */
 
 .search-bar {
-	width: 80%;
+	width: 60%;
 	display: flex;
 	align-items: center;
 	position: relative;
+	font-size: 14px;
 }
 
 .search-box {
 	flex-grow: 1;
 	padding: 8px;
-	padding-left: 40px;
-	border: 1px solid #ccc;
+	border: 1px solid #7c8693;
 	border-radius: 4px;
 	font-size: 16px;
 	outline: none;
+	color: #b9bdc6;
+	background-color: #25292e;
 }
 
-.search-logo {
+.search-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 8px;
+	position: absolute;
+	right: 5px; /* Adjust based on the search box padding */
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	position: absolute;
-	margin-left: 2px;
-	border-radius: 10px;
-	height: 16px;
 }
 
-.search-logo img {
-	width: 35px;
-	height: 35px;
-	/* cursor: pointer; */
-	padding: 8px;
-}
-
-.search-img input::placeholder {
-	color: #aaa; /* Placeholder color */
+.search-img {
+	width: 24px; /* Adjust size as needed */
+	height: 24px; /* Adjust size as needed */
 }
 
 .navbar-right {
 	flex: 1;
 	justify-content: flex-end;
 	align-items: center;
+	gap: 10px; /* Add space between search button and status buttons */
 }
 
 .status {
 	padding: 8px 16px;
-	background-color: #318ff3;
+	background-color: #25292e;
 	border-radius: 4px;
 	border: 1px solid #ccc;
 	cursor: pointer;
 	transition: background-color 0.3s ease-out;
-	border-radius: 50px;
-	font-size: 16px;
-}
-
-.status {
+	font-size: 14px;
+	font-weight: 400;
 	width: 100px;
-	align-content: center;
+	display: flex;
+	justify-content: center;
 	align-items: center;
 }
 
 .status:hover {
 	color: #ccc;
-	background-color: #0c5cb2;
-	/* border-color: #718fdb; */
+	background-color: #4d5258;
 }
 
-/* Responsive styles */
-@media (max-width: 980px) {
-	.navbar-global-search input {
-		padding: 5px;
-		width: 200px;
-		font-size: 1rem;
-		border: 2px solid #ccc;
-		border-radius: 4px;
-		padding-left: 30px;
-		outline: none;
-	}
-	.navbar-right {
-		flex: 1;
-		flex-direction: row; /* Ensures items are laid out in a row */
-		justify-content: flex-end; /* Align items to the right */
-		gap: 10px; /* Adds space between items */
-		display: flex; /* Ensure the element is a flex container */
-		align-items: center; /* Vertically center items */
-	}
-	.navbar-right-details {
-		display: flex; /* Make sure this is also a flex container */
-		flex-direction: row; /* Lay out children in a row */
-		align-items: center; /* Vertically center items */
-		gap: 10px; /* Space between Sign-Up and Login */
-	}
-}
-
-@media (max-width: 980px) {
-	.navbar-global-search input {
-		padding: 5px;
-		width: 200px;
-		font-size: 1rem;
-		border: 2px solid #ccc;
-		border-radius: 4px;
-		padding-left: 30px;
-		outline: none;
-	}
-}
-
-@media (max-width: 480px) {
-	.navbar {
-		flex-direction: column;
-		padding: 10px;
-	}
-
-	.navbar-left,
-	.navbar-center,
-	.navbar-right {
-		flex: none;
-		width: 100%; /* Ensure full width on small screens */
-	}
-
-	.navbar-global-menu-icon {
-		width: 25px;
-		height: 20px;
-		margin-right: 10px;
-	}
-
-	.navbar-global-search input {
-		width: 100%; /* Full width on very small screens */
-	}
-
-	.navbar-right-details-signup,
-	.navbar-right-details-login {
-		padding: 5px 8px;
-	}
-
-	.navbar-logo {
-		font-size: 1rem;
-	}
-}

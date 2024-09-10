@@ -1,0 +1,123 @@
+.user-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #0b1124;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	
+
+}
+
+.profile-pic {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	cursor: pointer;
+	align-self: center;
+	margin-bottom: 10px;
+	background-color: #0b1124;
+	border: 3px solid #3C414A; /* Light border around avatar */
+}
+
+.user-bio {
+	width: 100%;
+	background-color: #0b1124;
+	text-align: center;
+}
+
+.name-login {
+	background-color: #0b1124;
+}
+
+.name-login p {
+	color: #4078c0;
+	margin: 3px 0px;
+	background-color: #0b1124;
+}
+
+.name-login h2 {
+	color: #ccc;
+	margin: 5px 0px;
+	background-color: #0b1124;
+}
+
+.github {
+	background-color: #0b1124;
+	margin: 10px;
+}
+
+.github-button {
+	background-color: #24292e;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 12px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+.github-button:hover {
+	background-color: #0366d6;
+}
+
+.end-details {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	text-align: left;
+	justify-content: left;
+	width: 90%;
+	margin: auto;
+	background-color: #0b1124;
+}
+
+.bio {
+	text-align: center;
+	color: #ccc;
+	background-color: #0b1124;
+	font-size: 14px;
+}
+
+.company {
+	color: #ccc;
+	background-color: #0b1124;
+	font-size: 14px;
+}
+
+.location {
+	color: #ccc;
+	background-color: #0b1124;
+	font-size: 14px;
+}
+
+/* .user-info p strong {
+	color: #ffffff; /* Bright color for important text */
+/* background-color: #0b1124; */
+/* }  */
+
+.follow-stats {
+	font-size: 16px;
+	display: flex;
+	flex-direction: row;
+	/* gap: 20px; */
+	background-color: #0b1124;
+	margin: 15px 0;
+}
+
+.stats-box span {
+	background-color: #0b1124;
+	font-weight: 600;}
+
+.follow-stats p {
+	font-weight: bold;
+	background-color: #0b1124;
+	color: #f0f0f0; /* White color for followers/following stats */
+}
+
+.stats-box {
+	background-color: #0b1124;
+}
