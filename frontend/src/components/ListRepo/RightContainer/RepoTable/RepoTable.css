@@ -2,56 +2,53 @@
 .repo-table {
 	width: 100%;
 	margin: 0 auto;
-	background-color: #0b1124; /* Background color set */
 }
 
 /* The header for the repository table */
 .repo-table-header {
 	display: grid;
-	grid-template-columns: 0.5fr 2fr 3fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 0.4fr 2fr 3.5fr 0.6fr 0.6fr 0.6fr 0.6fr;
 	align-items: center;
 	gap: 10px;
-	padding: 12px 15px;
-	background-color: #0b1124; /* Background color set */
-	font-weight: bold;
-	border-bottom: 1px solid #cacaca;
-	text-align: center; /* Center-align header text */
-}
+	padding: 10px 10px;
+	font-weight: 300;
+	border-bottom: 1px solid #7c8693;
 
-.repo-table-header b{
-	background-color: #0b1124;
+	text-align: center; /* Center-align header text */
 }
 
 /* Each repository row in the table */
 .repo-table-row {
 	display: grid;
-	grid-template-columns: 0.5fr 2fr 3fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 0.4fr 2fr 3.5fr 0.6fr 0.6fr 0.6fr 0.6fr;
 	align-items: center;
 	gap: 10px;
-	padding: 12px 15px;
-	border-bottom: 1px solid #cacaca;
-	background-color: #0b1124; /* Background color set */
+	padding: 20px 10px;
+	border-bottom: 1px solid #7c8693;
 	text-align: center; /* Center-align row text */
 }
 
-.repo-table-row p{
-	background-color: #0b1124;
+.repo-table-header b {
+	font-size: 14px;
+	color: #cacaca;
 }
 /* Style for links */
 .repo-table-row a {
-	color: #1a73e8;
+	color: #4493d6;
 	text-decoration: none;
-	background-color: #0b1124; /* Background color set */
 }
 
 .repo-table-row a:hover {
 	text-decoration: underline;
-	background-color: #0b1124; /* Background color set */
 }
 
-/* Alternate background color for rows */
-.repo-table-row:nth-child(even) {
-	background-color: #0b1124; /* Keep the same background color */
+.repo-table-row p {
+	font-size: 14px; /* Smaller font size on mobile */
+	color: #898e99;
+}
+
+.repo-table-row a {
+	font-size: 14px;
 }
 
 /* Responsive design for smaller screens */
@@ -65,13 +62,5 @@
 		gap: 15px;
 		border: 1px solid #cacaca;
 		margin-bottom: 10px;
-	}
-
-	.repo-table-row p {
-		font-size: 14px; /* Smaller font size on mobile */
-	}
-
-	.repo-table-row a {
-		font-size: 14px;
 	}
 }

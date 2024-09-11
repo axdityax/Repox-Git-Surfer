@@ -32,7 +32,7 @@ const ListRepo = () => {
 		// Simulate async operation for LeftContainer loading
 		const loadLeftContainer = async () => {
 			// Assuming LeftContainer has some async operations, like data fetching
-			await new Promise((resolve) => setTimeout(resolve, 100)); // Simulate delay
+			await new Promise((resolve) => setTimeout(resolve, 50)); // Simulate delay
 			setIsLeftLoaded(true);
 		};
 
@@ -41,13 +41,12 @@ const ListRepo = () => {
 
 	return (
 		<div className='list-repo'>
-			<div className='left-container'>
-				<LeftContainer onLoaded={() => setIsLeftLoaded(true)} />
-			</div>
+			<LeftContainer onLoaded={() => setIsLeftLoaded(true)} />
+			{/* <div className='left-container'></div> */}
 			{isLeftLoaded && (
-				<div className='right-container'>
 					<RightContainer />
-				</div>
+				// <div className='right-container'>
+				// </div>
 			)}
 		</div>
 	);

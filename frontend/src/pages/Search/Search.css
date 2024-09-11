@@ -1,3 +1,4 @@
+/* Container for search results */
 .search-results {
 	display: flex;
 	flex-wrap: wrap;
@@ -6,10 +7,12 @@
 	margin: 3%;
 }
 
+/* Style for individual cards */
 .card {
-	background-color: #011239;
+	margin: 6px;
+	background-color: #151b23;
 	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 3px 6px rgba(158, 157, 157, 0.1);
 	width: 200px;
 	padding: 20px;
 	text-align: center;
@@ -19,10 +22,13 @@
 	opacity: 0; /* Start with zero opacity */
 	animation: fadeIn 0.8s ease-out forwards; /* Apply fade-in animation */
 }
+
+/* Card hover effect */
 .card:hover {
 	transform: scale(1.05);
 }
 
+/* Style for avatar images */
 .avatar {
 	width: 100px;
 	height: 100px;
@@ -31,40 +37,43 @@
 	cursor: pointer;
 }
 
+/* Style for user name */
 .name {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: bold;
 	color: #ccc;
-	background-color: #011239;
+	background-color: #151b23;
 }
 
+/* Style for username */
 .username {
-	font-size: 14px;
-	color: #ccc;
-	background-color: #011239;
+	font-size: 12px;
+	color: #F0F6FC;
+	background-color: #151b23;
+	margin: 5px 0px;
 }
 
-/* .username a {
-	font-size: 14px;
-	color: #ccc;
-} */
-
+/* Style for username links */
 .username a {
 	text-decoration: none;
-	color: #00bfff; /* Bright blue for text color */
+	color: #3993f8; /* Bright blue for text color */
 	transition: color 0.2s ease-in-out, background-color 0.2s ease;
-	background-color: #011239;
+	background-color: #151b23;
 	border-radius: 3px; /* Optional: Add rounded corners */
 }
 
+/* Card hover effect: box shadow and translation */
 .card:hover {
 	transform: translateY(-10px);
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* Additional card details styling */
 .card-details {
-	background-color: #011239;
+	background-color: #151b23;
 }
 
+/* Keyframes for fade-in animation */
 @keyframes fadeIn {
 	from {
 		opacity: 0;

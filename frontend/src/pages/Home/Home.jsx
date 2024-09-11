@@ -28,10 +28,12 @@ const Home = () => {
 				<div className='heading'>
 					Welcome to <span>RepoX</span> <br></br> Your GitHub Insights Unleashed!
 				</div>
-				<div className='bullet-points'>{bulletPoints[currentBullet]}</div>
 			</div>
 			<div className='description'>
-				Enter a GitHub username to begin your deep dive into insights!
+				<div className='bullet-points'>{bulletPoints[currentBullet]}</div>
+				<div className='footer'>
+					Enter a GitHub username to begin your deep dive into insights!
+				</div>
 			</div>
 		</div>
 	);

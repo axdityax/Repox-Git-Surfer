@@ -52,41 +52,44 @@ const LeftContainer = () => {
 	return (
 		<div className='main-left-container'>
 			{userData ? (
-				<div className='user-info'>
+				<div className='user-profile'>
 					<img className='profile-pic' src={userData.avatar_url} alt='' />
-					<div className='user-bio'>
-						<div className='name-login'>
-							<h2>{userData.name}</h2>
-							<p className='login'>@{userData.login}</p>
-						</div>
-
-						<div className='github'>
+					<div className='profile-details'>
+						<div className='name-username'>
+							<div className='user-name'>{userData.name}</div>
 							<a href={userData.html_url} target='_blank' rel='noopener noreferrer'>
-								<button className='github-button'>Open On GitHub</button>
+								<p className='user-login'>@{userData.login}</p>
 							</a>
 						</div>
 
-						<div className='end-details'>
+						{/* <div className='github-link'>
+							<a href={userData.html_url} target='_blank' rel='noopener noreferrer'>
+								<button className='github-button'>GitHub</button>
+							</a>
+						</div> */}
+
+						<div className='additional-info'>
 							<div className='bio'>{userData.bio || "No bio available"}</div>
 							<div className='company'>🏢 {userData.company || "N/A"}</div>
 							<div className='location'>📍 {userData.location || "N/A"}</div>
 						</div>
-
-						<div className='follow-stats'>
-							<div className='stats-box'>
+						<div className='separator'></div>
+						<div className='stats'>
+							<div className='stats-item'>
 								<span>Repositry:</span> {userData.public_repos}
 							</div>
-							<div className='stats-box'>
+							<div className='stats-item'>
 								<span>Followers: </span> {userData.followers}
 							</div>
-							<div className='stats-box'>
+							<div className='stats-item'>
 								<span>Following: </span> {userData.following}
 							</div>
 						</div>
+						<div className='separator'></div>
 					</div>
 				</div>
 			) : (
-				<div className='user-info'>
+				<div className='user-profile'>
 					<p>Loading user data...</p> {/* Loading message while data is being fetched */}
 				</div>
 			)}
@@ -95,8 +98,6 @@ const LeftContainer = () => {
 };
 
 export default LeftContainer;
-
-
 
 // import React, { useContext, useEffect } from "react";
 // import "./LeftContainer.css";

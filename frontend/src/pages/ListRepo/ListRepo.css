@@ -17,23 +17,16 @@
 
 .list-repo {
 	display: flex;
-	flex-direction: row;
-	margin: auto;
+	/* flex-direction: row; */
+	/* margin: auto; */
+	/* justify-content: space-between; */
 }
 
 .left-container {
-	width: 25%;
-	padding: 25px;
-	border-right: 1.5px solid #474747;
-	position: sticky; /* Fix the container */
-	top: 82px; /* Distance from the top of the viewport */
-	height: calc(100vh - 82px); /* Adjust height to fit within the viewport */
-	overflow-y: auto; /* Enable scrolling within the container if needed */
-	box-sizing: border-box; /* Ensure padding and border are included in width/height */
+	border: 2px solid white;
 }
 
-
 .right-container {
-	width: 75%;
-	padding: 25px;
+	border: 2px solid white;
+
 }

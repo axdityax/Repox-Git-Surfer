@@ -3,8 +3,8 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 40vw;
-	animation: fadeIn 1s ease-in-out;
+	height: 35vw;
+	animation: fadeIn 2.5s ease-in-out;
 }
 
 .home-page {
@@ -13,11 +13,10 @@
 	perspective: 1000px;
 	width: 60%;
 	margin: 0 auto;
-	animation: slideIn 1.2s ease-in-out;
 }
 
 .header-container {
-	height: 300px;
+	height: 250px;
 	display: flex;
 	flex-direction: column;
 	margin-top: 100px;
@@ -32,75 +31,43 @@
 	color: #ccc;
 	margin-top: 100px;
 	justify-content: left;
-	animation: zoomIn 1.2s ease-in-out;
 }
 
 .heading span {
-	color: #4078c0;
+	color: #4493d6;
 	font-size: 70px;
 	font-weight: bold;
 	transition: color 0.3s ease;
 }
 
-.heading span:hover {
-	color: #305d9b;
-}
-
 .bullet-points {
-	color: #6dabdd;
+	color: #4493d6;
 	margin-top: 20px;
 	font-size: 20px;
 	text-align: left;
-	animation: slideUp 1.5s ease-in-out;
+	font-weight: 600;
 }
 
 .description {
-	font-size: 16px;
-	color: #a6a6a6;
+	display: flex;
+	flex-direction: column;
+	font-size: 14px;
 	margin: 20px;
-	text-align: center; 
-	animation: fadeIn 2s ease-in-out;
+	align-items: center;
+	text-align: center;
+	animation: fadeIn 2.5s ease-in-out;
+	gap: 10px;
 }
 
-/* Animations */
+.footer {
+	color: #7c8693;
+	font-weight: 300;
+}
 @keyframes fadeIn {
 	from {
 		opacity: 0;
 	}
 	to {
-		opacity: 1;
-	}
-}
-
-@keyframes slideIn {
-	from {
-		transform: translateY(50px);
-		opacity: 0;
-	}
-	to {
-		transform: translateY(0);
-		opacity: 1;
-	}
-}
-
-@keyframes zoomIn {
-	from {
-		transform: scale(0.8);
-		opacity: 0;
-	}
-	to {
-		transform: scale(1);
-		opacity: 1;
-	}
-}
-
-@keyframes slideUp {
-	from {
-		transform: translateY(20px);
-		opacity: 0;
-	}
-	to {
-		transform: translateY(0);
 		opacity: 1;
 	}
 }

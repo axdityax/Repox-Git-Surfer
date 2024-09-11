@@ -1,9 +1,23 @@
 import axios from "axios";
+import dotenv from "dotenv";
 
-const token = process.env.REACT_APP_GITHUB_TOKEN;
+dotenv.config();
+
+const token = process.env.GITHUB_TOKEN;
+
 const getAllUsers = async (req, res) => {
 	try {
 		const { username } = req.body;
+		if (!username) {
+			return res.status(400).json({ success: false, message: "Username is required" });
+		}
+		if (!token) {
+			console.error("GitHub token is not set in environment variables");
+			console.log(process.env);
+		} else {
+			console.log("GitHub Token: ", process.env.GITHUB_TOKEN);
+		}
+
 		// Fetching the users from the GitHub API
 		const usersData = await axios.get(`https://api.github.com/search/users?q=${username}`, {
 			headers: {
@@ -25,7 +39,6 @@ const getAllUsers = async (req, res) => {
 			res.json({ success: false, message: "User not found" });
 		}
 	} catch (error) {
-		// Handle any errors
 		res.status(500).json({
 			success: false,
 			message: "Error fetching users",
@@ -37,6 +50,10 @@ const getAllUsers = async (req, res) => {
 const getUser = async (req, res) => {
 	try {
 		const { user_id } = req.body;
+		if (!user_id) {
+			return res.status(400).json({ success: false, message: "User ID is required" });
+		}
+
 		const user = await axios.get(`https://api.github.com/users/${user_id}`, {
 			headers: {
 				Authorization: `token ${token}`,
@@ -44,14 +61,21 @@ const getUser = async (req, res) => {
 		});
 		res.json({ success: true, data: user.data });
 	} catch (error) {
-		// Send a JSON response with the error message
-		res.json({ success: false, message: "Error", error: error.message });
+		res.status(500).json({
+			success: false,
+			message: "Error fetching user",
+			error: error.message,
+		});
 	}
 };
 
 const getAllRepos = async (req, res) => {
 	try {
 		const { user_id } = req.body;
+		if (!user_id) {
+			return res.status(400).json({ success: false, message: "User ID is required" });
+		}
+
 		let repos = [];
 		let page = 1;
 		const perPage = 100; // Max per page is 100
@@ -80,7 +104,6 @@ const getAllRepos = async (req, res) => {
 		const filteredData = repos.map((item) => ({
 			id: item.id,
 			name: item.name,
-			// full_name: item.full_name,
 			forks: item.forks_count,
 			open_issues: item.open_issues_count,
 			stargazers_count: item.stargazers_count,
@@ -88,12 +111,9 @@ const getAllRepos = async (req, res) => {
 			description: item.description,
 		}));
 
-		console.log(filteredData);
 		res.status(200).json({ success: true, data: filteredData });
 	} catch (error) {
-		// Detailed logging of the error object
 		console.error("Error fetching repositories:", error);
-		// Send a failure response with an error message
 		res.status(500).json({
 			success: false,
 			message: "Error fetching repositories",

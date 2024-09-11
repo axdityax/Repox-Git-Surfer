@@ -11,7 +11,7 @@
 
 .login-popup {
 	position: absolute;
-	z-index: 1;
+	z-index: 2000;
 	width: 100%;
 	height: 100%;
 	background-color: #00000090;
@@ -22,7 +22,7 @@
 	place-self: center;
 	width: max(23vw, 330px);
 	color: #808080;
-	background-color: #08245a;
+	background-color: #25292E;
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
@@ -33,7 +33,7 @@
 }
 
 .title {
-	background-color: #08245a;
+	background-color: #25292E;
 }
 
 .login-popup-title {
@@ -41,11 +41,11 @@
 	justify-content: space-between;
 	align-items: center;
 	color: black;
-	background-color: #08245a;
+	background-color: #25292E;
 }
 
 .login-popup-title img {
-	background-color: #08245a;
+	background-color: #25292E;
 	width: 20px;
 	cursor: pointer;
 }
@@ -54,25 +54,26 @@
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
-	background-color: #08245a;
+	background-color: #25292E;
 }
 
 .login-popup-inputs input {
 	outline: none;
-	border: 1px solid #ccc;
-	padding: 10px;
+	border: 1px solid #7c8693;
+	padding: 8px;
 	border-radius: 4px;
-	background-color: #08245a;
+	background-color: #25292E;
 	color: #ccc;
+	font-size: 14px;
 }
 
 .login-popup-container button {
-	border: none;
-	padding: 10px;
+	border: 1px solid #7c8693;
+	padding: 8px;
 	border-radius: 4px;
 	color: white;
-	background-color: #318ff3;
-	font-size: 15px;
+	background-color: #25292E;
+	font-size: 14px;
 	cursor: pointer;
 }
 
@@ -81,7 +82,7 @@
 	align-items: start;
 	gap: 8px;
 	margin-top: -15px;
-	background-color: #08245a;
+	background-color: #25292E;
 }
 
 .login-popup-condition input {
@@ -89,26 +90,26 @@
 }
 
 .login-popup-condition p {
-	background-color: #08245a;
+	background-color: #25292E;
 }
 
 .login-popup p span {
-	color: #318ff3;
+	color: #4493D6;
 	font-weight: 500;
 	cursor: pointer;
 	margin-left: 2px;
-	background-color: #08245a;
+	background-color: #25292E;
 }
 
 .change-state {
-	background-color: #08245a;
+	background-color: #25292E;
 }
 
 .status:hover {
 	color: #ccc;
-	background-color: #0c5cb2;
+	background-color: #4d5258;
 }
 
 .login-popup-container button:hover {
-	background-color: #0c5cb2;
+	background-color: #4d5258;
 }

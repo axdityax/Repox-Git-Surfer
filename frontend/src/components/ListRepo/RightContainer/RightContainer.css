@@ -1,66 +1,64 @@
 .main-right-container {
-    padding: 20px;
-    background-color: #0b1124;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 12px;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	font-size: 12px;
+	width: 75%;
+	box-shadow: 0 0 3px 6px rgba(158, 157, 157, 0.1);
+	margin: 20px;
+	margin-top: 25px;
 }
 
-.about-table {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    background-color: #0b1124;
-    position: sticky;
-    top: 82px;
-    z-index: 10;
+.search-sort {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 16px;
+	position: sticky;
+	top: 82px;
+	z-index: 10;
 }
 
-.table-name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #0b1124;
-
+.section-title {
+	font-size: 25px;
+	font-weight: bold;
+	color: #7c8693;
 }
 
-.table-sort {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 12px; /* Add spacing between the search box and select dropdown */
+.search-sort-controls {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 12px; /* Add spacing between the search box and select dropdown */
 }
 
-.table-sort input[type='text'] {
-    padding: 8px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    color: #333;
-    width: 200px;
+.search-input {
+	background-color: #25292e;
+	padding: 8px;
+	font-size: 14px;
+	border: 1px solid #7c8693;
+	border-radius: 4px;
+	color: #b9bdc6;
+	width: 200px;
 }
 
-.table-sort input[type='text']:focus {
-    outline: none;
-    border-color: #1a73e8;
-    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+.sort-select {
+	background-color: #25292e;
+	border: 1px solid #7c8693;
+	padding: 8px;
+	text-align: center;
+	font-size: 14px;
+	border-radius: 4px;
+	cursor: pointer;
+	color: #7c8693;
 }
 
-.table-sort select {
-    padding: 8px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #4078c0;
-	/* color: #4078c0; */
-    cursor: pointer;
-}
+.sort-select:focus {
+	outline: none;
+	color: #7c8693;
 
-.table-sort select:focus {
-    outline: none;
-    border-color: #1a73e8;
-    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+	border-color: #202328;
+	background-color: #4d5258;
+	box-shadow: 0 0 0 2px rgba(63, 84, 111, 0.2);
 }

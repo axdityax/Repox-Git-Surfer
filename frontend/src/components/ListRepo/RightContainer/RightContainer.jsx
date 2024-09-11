@@ -40,7 +40,7 @@ const RightContainer = () => {
 	useEffect(() => {
 		const fetchRepos = async () => {
 			if (!currUser) {
-				console.log("hello")
+				console.log("hello");
 				setError("User not logged in or user ID missing.");
 				setLoading(false);
 				return;
@@ -100,19 +100,24 @@ const RightContainer = () => {
 
 	return (
 		<div className='main-right-container'>
-			<div className='about-table'>
-				<div className='table-name'>Repository</div>
+			<div className='search-sort'>
+				<div className='section-title'>Repository</div>
 
-				<div className='table-sort'>
+				<div className='search-sort-controls'>
 					<div>
 						<input
 							type='text'
+							className='search-input'
 							placeholder='Search repositories...'
 							value={searchQuery}
 							onChange={handleSearchChange}
 						/>
 					</div>
-					<select name='sort' value={sortOption} onChange={handleSortChange}>
+					<select
+						className='sort-select'
+						name='sort'
+						value={sortOption}
+						onChange={handleSortChange}>
 						<option value='name'>Name</option>
 						<option value='stars'>Stars</option>
 						<option value='issues'>Open Issues</option>

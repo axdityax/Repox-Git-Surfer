@@ -57,10 +57,11 @@
 	padding: 8px;
 	border: 1px solid #7c8693;
 	border-radius: 4px;
-	font-size: 16px;
+	font-size: 14px;
 	outline: none;
 	color: #b9bdc6;
 	background-color: #25292e;
+	padding-right: 50px;
 }
 
 .search-button {
@@ -91,7 +92,7 @@
 	padding: 8px 16px;
 	background-color: #25292e;
 	border-radius: 4px;
-	border: 1px solid #ccc;
+	border: 1px solid #7c8693;
 	cursor: pointer;
 	transition: background-color 0.3s ease-out;
 	font-size: 14px;
