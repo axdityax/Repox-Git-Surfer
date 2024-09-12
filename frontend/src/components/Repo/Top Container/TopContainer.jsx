@@ -113,8 +113,8 @@ const TopContainer = () => {
 							<Link className='repo-navlink' to='readME'>
 								ReadME
 							</Link>
-							<Link className='repo-navlink' to='contributions'>
-								Contributions
+							<Link className='repo-navlink' to='contributors'>
+								Contributors
 							</Link>
 							<Link className='repo-navlink' to='issues'>
 								Issues

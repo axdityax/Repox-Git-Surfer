@@ -95,7 +95,6 @@
 // };
 
 // export default Commits;
-
 import React, { useContext, useEffect, useState } from "react";
 import "./Commits.css";
 import axios from "axios";
@@ -162,8 +161,12 @@ const Commits = () => {
 
 	const filteredCommits = commits.filter(
 		(commit) =>
-			commit.message.toLowerCase().includes(searchTerm.toLowerCase()) &&
-			commit.author.toLowerCase().includes(authorName.toLowerCase()) &&
+			(commit.message && typeof commit.message === "string"
+				? commit.message.toLowerCase().includes(searchTerm.toLowerCase())
+				: false) &&
+			(commit.author && typeof commit.author === "string"
+				? commit.author.toLowerCase().includes(authorName.toLowerCase())
+				: false) &&
 			(!startDate || new Date(commit.date) >= new Date(startDate)) &&
 			(!endDate || new Date(commit.date) <= new Date(endDate))
 	);

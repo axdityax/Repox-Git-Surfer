@@ -9,9 +9,9 @@ import Search from "./pages/Search/Search";
 import Navbar from "./components/NavBar/Navbar";
 import Commits from "./components/RepoNavbar/Commits/Commits";
 import Issues from "./components/RepoNavbar/Issues/Issues";
-import Contributions from "./components/RepoNavbar/Contributions/Contributions";
 import ReadMe from "./components/RepoNavbar/ReadME/ReadME";
 import CommitsActivity from "./components/RepoNavbar/CommitsActivity/CommitsActivity";
+import Contributors from "./components/RepoNavbar/Contributions/Contributors";
 
 function App() {
 	const [showLogin, setShowLogin] = useState(false);
@@ -31,7 +31,7 @@ function App() {
 					<Route path='/repo' element={<Repo />}>
 						<Route index element={<Issues />} />
 						<Route path='issues' element={<Issues />} />
-						<Route path='contributions' element={<Contributions />} />
+						<Route path='contributors' element={<Contributors />} />
 						<Route path='commits' element={<Commits />} />
 						<Route path='commitsactivity' element={<CommitsActivity />} />
 						<Route path='readME' element={<ReadMe />} />
