@@ -3,13 +3,16 @@ import React, { createContext, useState } from "react";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-	const [Username, setUserName] = useState(""); // Fixed useState import
+	const [Username, setUserName] = useState("");
 	const [userList, setUserList] = useState("");
 	const [currUser, setCurrUser] = useState("");
-	const [searchQuery, setSearchQuery] = useState(""); // Add searchQuery state
-	const [userData, setUserData] = useState({}); // Add searchQuery state
+	const [searchQuery, setSearchQuery] = useState("");
+	const [userData, setUserData] = useState({});
+	const [currRepoName, setCurrRepoName] = useState("");
+	const [currRepoData, setCurrRepoData] = useState({});
+	const [commits, setCommits] = useState([]);
 
-	const url = "http://localhost:4000"; // Removed if not used
+	const url = "http://localhost:4000";
 
 	const contextValue = {
 		searchQuery,
@@ -21,6 +24,12 @@ const StoreContextProvider = (props) => {
 		setCurrUser,
 		userData,
 		setUserData,
+		currRepoName,
+		setCurrRepoName,
+		currRepoData,
+		setCurrRepoData,
+		commits,
+		setCommits,
 	};
 
 	return <StoreContext.Provider value={contextValue}>{props.children}</StoreContext.Provider>;

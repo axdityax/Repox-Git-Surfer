@@ -28,6 +28,9 @@
 	text-align: center; /* Center-align row text */
 }
 
+.repo-link {
+	cursor: pointer;
+}
 .repo-table-header b {
 	font-size: 14px;
 	color: #cacaca;

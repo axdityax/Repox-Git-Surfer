@@ -47,6 +47,43 @@ const getAllUsers = async (req, res) => {
 	}
 };
 
+const getRepo = async (req, res) => {
+	try {
+		const { user_id, repo_name } = req.body;
+		if (!user_id) {
+			return res.status(400).json({ success: false, message: "User ID is required" });
+		}
+
+		const response = await axios.get(`https://api.github.com/repos/${user_id}/${repo_name}`, {
+			headers: {
+				Authorization: `token ${token}`, // Replace with your actual token
+			},
+		});
+
+		const { data } = response;
+
+		// Filter the data to include only the required fields
+		const filteredData = {
+			id: data.id,
+			full_name: data.full_name,
+			description: data.description,
+			html_url: data.html_url,
+			stargazers_count: data.stargazers_count,
+			forks_count: data.forks_count,
+			language: data.language,
+			open_issues_count: data.open_issues_count,
+		};
+		console.log(filteredData);
+		res.json({ success: true, data: filteredData });
+	} catch (error) {
+		res.status(500).json({
+			success: false,
+			message: "Error fetching repository",
+			error: error.message,
+		});
+	}
+};
+
 const getUser = async (req, res) => {
 	try {
 		const { user_id } = req.body;
@@ -122,7 +159,115 @@ const getAllRepos = async (req, res) => {
 	}
 };
 
-export { getAllUsers, getUser, getAllRepos };
+// const getRepoCommits = async (req, res) => {
+// 	try {
+// 		const { user_id, repo_name } = req.body;
+// 		if (!user_id) {
+// 			return res.status(400).json({ success: false, message: "User ID is required" });
+// 		}
+// 		console.log(user_id, repo_name);
+// 		const response = await axios.get(
+// 			`https://api.github.com/repos/${user_id}/${repo_name}/commits`,
+// 			{
+// 				headers: {
+// 					Authorization: `token ${token}`, // Replace with your actual token
+// 				},
+// 			}
+// 		);
+
+// 		const { data } = response;
+// 		console.log(data);
+// 		// Filter the data to include only the required fields
+// 		const filteredData = data.map((commit) => ({
+// 			sha: commit.sha,
+// 			message: commit.commit.message,
+// 			date: commit.commit.author.date, // Add the commit date and time
+// 			commit: {
+// 				author: {
+// 					login: commit.author.login,
+// 					id: commit.author.id,
+// 					avatar_url: commit.author.avatar_url,
+// 				},
+// 			},
+// 		}));
+
+// 		console.log(filteredData);
+// 		res.json({ success: true, data: filteredData });
+// 	} catch (error) {
+// 		res.status(500).json({
+// 			success: false,
+// 			message: "Error fetching repository",
+// 			error: error.message,
+// 		});
+// 	}
+// };
+
+
+const getRepoCommits = async (req, res) => {
+	try {
+		const { user_id, repo_name } = req.body;
+		if (!user_id) {
+			return res.status(400).json({ success: false, message: "User ID is required" });
+		}
+		console.log(user_id, repo_name);
+
+		// Fetch the first 100 commits
+		const response = await axios.get(
+			`https://api.github.com/repos/${user_id}/${repo_name}/commits`,
+			{
+				headers: {
+					Authorization: `token ${token}`, // Replace with your actual token
+				},
+				params: {
+					per_page: 100, // Set the number of commits per page
+					page: 1, // Set the page number to fetch
+				},
+			}
+		);
+
+		const { data } = response;
+		console.log(data);
+
+		// Filter the data to include only the required fields
+		const filteredData = data.map((commit) => ({
+			sha: commit.sha,
+			message: commit.commit.message,
+			date: commit.commit.author.date, // Add the commit date and time
+			commit: {
+				author: {
+					login: commit.author ? commit.author.login : "Unknown", // Handle cases where author may be null
+					id: commit.author ? commit.author.id : "Unknown", // Handle cases where author may be null
+					avatar_url: commit.author ? commit.author.avatar_url : "Unknown", // Handle cases where author may be null
+				},
+			},
+		}));
+
+		console.log(filteredData);
+		res.json({ success: true, data: filteredData });
+	} catch (error) {
+		res.status(500).json({
+			success: false,
+			message: "Error fetching repository",
+			error: error.message,
+		});
+	}
+};
+
+
+const getRepoReadME = async (req, res) => {};
+const getRepoContributions = async (req, res) => {};
+const getRepoIssues = async (req, res) => {};
+
+export {
+	getAllUsers,
+	getUser,
+	getAllRepos,
+	getRepo,
+	getRepoCommits,
+	getRepoReadME,
+	getRepoContributions,
+	getRepoIssues,
+};
 
 // const getAllUsers = async (req, res) => {
 // 	try {

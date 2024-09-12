@@ -5,6 +5,7 @@
 	gap: 20px;
 	justify-content: center;
 	margin: 3%;
+	animation: fadeIn 1s ease-out forwards; /* Apply fade-in animation */
 }
 
 /* Style for individual cards */
@@ -48,7 +49,7 @@
 /* Style for username */
 .username {
 	font-size: 12px;
-	color: #F0F6FC;
+	color: #f0f6fc;
 	background-color: #151b23;
 	margin: 5px 0px;
 }

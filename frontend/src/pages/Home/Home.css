@@ -63,6 +63,7 @@
 	color: #7c8693;
 	font-weight: 300;
 }
+
 @keyframes fadeIn {
 	from {
 		opacity: 0;
