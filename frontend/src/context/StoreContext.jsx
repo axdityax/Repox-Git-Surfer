@@ -12,7 +12,7 @@ const StoreContextProvider = (props) => {
 	const [currRepoData, setCurrRepoData] = useState({});
 	const [commits, setCommits] = useState([]);
 
-	const url = "http://localhost:4000";
+	const url = "https://repox-backend.onrender.com";
 
 	const contextValue = {
 		searchQuery,
