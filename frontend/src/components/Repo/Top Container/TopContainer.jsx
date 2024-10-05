@@ -110,9 +110,9 @@ const TopContainer = () => {
 							<Link className='repo-navlink' to='commits'>
 								Commits
 							</Link>
-							<Link className='repo-navlink' to='readME'>
+							{/* <Link className='repo-navlink' to='readME'>
 								ReadME
-							</Link>
+							</Link> */}
 							<Link className='repo-navlink' to='contributors'>
 								Contributors
 							</Link>
