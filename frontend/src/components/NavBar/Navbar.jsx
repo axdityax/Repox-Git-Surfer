@@ -14,6 +14,7 @@ const Navbar = ({ setShowLogin }) => {
 	const handleKeyPress = (e) => {
 		if (e.key === "Enter" && inputValue.trim()) {
 			performSearch();
+			setInputValue("");
 		}
 	};
 

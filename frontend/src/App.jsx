@@ -9,9 +9,9 @@ import Search from "./pages/Search/Search";
 import Navbar from "./components/NavBar/Navbar";
 import Commits from "./components/RepoNavbar/Commits/Commits";
 import Issues from "./components/RepoNavbar/Issues/Issues";
-import ReadMe from "./components/RepoNavbar/ReadME/ReadME";
 import CommitsActivity from "./components/RepoNavbar/CommitsActivity/CommitsActivity";
 import Contributors from "./components/RepoNavbar/Contributions/Contributors";
+import ReadMe from "./components/RepoNavbar/ReadME/ReadME";
 
 function App() {
 	const [showLogin, setShowLogin] = useState(false);
