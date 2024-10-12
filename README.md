@@ -2,6 +2,8 @@
 
 RepoX-Git Surfer is a powerful tool that allows users to explore Git repositories, view commit histories, analyze contributor activity, and inspect repository details such as issues and README files. This platform provides a user-friendly interface for accessing key repository insights and user information from GitHub.
 
+## Live Demo
+- **User**: [Repox - Live - Frontend](https://repox-frontend.onrender.com/)
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
